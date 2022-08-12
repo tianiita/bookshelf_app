@@ -121,8 +121,8 @@ function bookShelf(bookObject) {
             const editIsCompleted = document.getElementById('editBookIsCompleted');
             editIsCompleted.checked = bookObject.bookCheck;
         
-            editForm.addEventListener('submit', function (ev) {
-                ev.preventDefault();
+            editForm.addEventListener('submit', function (event) {
+                event.preventDefault();
                 editBookshelf(bookObject.id);
                 editBox.classList.remove('edit_active');
                 Toastify({
@@ -187,8 +187,8 @@ function bookShelf(bookObject) {
             const editIsCompleted = document.getElementById('editBookIsCompleted');
             editIsCompleted.checked = bookObject.bookCheck;
         
-            editForm.addEventListener('submit', function (ev) {
-                ev.preventDefault();
+            editForm.addEventListener('submit', function (event) {
+                event.preventDefault();
                 editBookshelf(bookObject.id);
                 editBox.classList.remove('edit_active');
                 Toastify({
