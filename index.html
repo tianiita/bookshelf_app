@@ -34,11 +34,22 @@
         <label for="inputBookYear">Tahun</label>
         <input id="inputBookYear" type="number" required>
       </div>
+      <div class="input">
+        <label for="inputBookGenre">Genre Buku</label>
+        <input list="book-genre" id="inputBookGenre" type="list">
+        <datalist id="book-genre">
+          <option value="Fiksi">
+          <option value="Non-Fiksi">
+        </datalist>
+      </div>
       <div class="input_inline">
         <label for="inputBookIsComplete">Selesai dibaca</label>
         <input id="inputBookIsComplete" type="checkbox">
       </div>
-      <button id="bookSubmit" type="submit">Masukkan Buku ke rak <span>Belum selesai dibaca</span></button>
+      <div class="input_button">
+        <button id="bookSubmit" type="submit">Masukkan Buku ke rak <span>Belum selesai dibaca</span></button>
+        <button id="bookReset" type="Reset">Kosongkan Form</button>
+      </div>
     </form>
   </section>
   
@@ -82,11 +93,14 @@
             <label for="editBookYear">Tahun</label>
             <input id="editBookYear" type="number" required>
           </div>
+          <div class="input">
+            <label for="editBookGenre">Genre Buku</label>
+            <input id="editBookGenre" type="text" required>
           <div class="input_inline">
             <label for="editBookIsCompleted">Selesai dibaca</label>
             <input id="editBookIsCompleted" type="checkbox">
           </div>
-          <button id="editSubmit" type="submmit">Edit buku</button>
+          <button id="editSubmit" type="submit">Edit buku</button>
         </form>
         <span id="editClose">X</span>
       </section>
