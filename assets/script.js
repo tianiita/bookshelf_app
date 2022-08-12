@@ -7,12 +7,13 @@ function bookId() {
     return +new Date();
 }
 
-function generateBookObject(id, title, author, year, bookCheck) {
+function generateBookObject(id, title, author, year, genre, bookCheck) {
     return {
         id,
         title,
         author,
         year,
+        genre,
         bookCheck
     }
 }
@@ -21,10 +22,11 @@ function addBook () {
     const bookTitle = document.getElementById('inputBookTitle').value;
     const bookAuthor = document.getElementById('inputBookAuthor').value;
     const bookYear = document.getElementById('inputBookYear').value;
+    const bookGenre = document.getElementById('inputBookGenre').value;
     const bookCheck = document.getElementById('inputBookIsComplete').checked;
 
     const generateBookId = bookId();
-    const bookObject = generateBookObject (generateBookId, bookTitle, bookAuthor, bookYear, bookCheck);
+    const bookObject = generateBookObject (generateBookId, bookTitle, bookAuthor, bookYear, bookGenre, bookCheck);
     bookList.push(bookObject);
     Toastify({
         text: 'Berhasil menambahkan buku',
@@ -63,6 +65,9 @@ function bookShelf(bookObject) {
     const bookAuthor = document.createElement('p');
     bookAuthor.innerText = 'Penulis: ' + bookObject.author;
 
+    const bookGenre = document.createElement('p');
+    bookGenre.innerText = 'Genre: ' + bookObject.genre;
+    
     const bookYear = document.createElement('p');
     bookYear.innerText = 'Tahun: ' + bookObject.year;
 
@@ -72,7 +77,7 @@ function bookShelf(bookObject) {
     const bookButton = document.createElement('div');
     bookButton.classList.add('green', 'red', 'orange','action');
 
-    container.append(bookTitle, bookAuthor, bookYear);
+    container.append(bookTitle, bookAuthor, bookGenre, bookYear);
     container.append(bookButton);
     container.setAttribute('id', `bookList-${bookObject.id}`);
 
@@ -117,6 +122,9 @@ function bookShelf(bookObject) {
         
             const editYear = document.getElementById('editBookYear');
             editYear.value = bookObject.year;
+
+            const editGenre = document.getElementById('editBookGenre');
+            editGenre.value = bookObject.genre;
         
             const editIsCompleted = document.getElementById('editBookIsCompleted');
             editIsCompleted.checked = bookObject.bookCheck;
@@ -183,6 +191,9 @@ function bookShelf(bookObject) {
         
             const editYear = document.getElementById('editBookYear');
             editYear.value = bookObject.year;
+
+            const editGenre = document.getElementById('editBookGenre');
+            editGenre.value = bookObject.genre;
         
             const editIsCompleted = document.getElementById('editBookIsCompleted');
             editIsCompleted.checked = bookObject.bookCheck;
@@ -239,11 +250,13 @@ function editBookshelf (bookId) {
     const editTitle = document.getElementById('editBookTitle').value;
     const editAuthor = document.getElementById('editBookAuthor').value;
     const editYear = document.getElementById('editBookYear').value;
+    const editGenre = document.getElementById('editBookGenre').value;
     const editIsCompleted = document.getElementById('editBookIsCompleted').checked;
 
     bookTarget.title = editTitle;
     bookTarget.author = editAuthor;
     bookTarget.year = editYear;
+    bookTarget.genre = editGenre;
     bookTarget.bookCheck = editIsCompleted;
 
     document.dispatchEvent(new Event(RENDER_EVENT));
