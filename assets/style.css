@@ -240,12 +240,14 @@ main {
 }
 
 .dark-mode,
+.dark-mode input,
 .dark-mode .edit {
     background-color: rgb(19, 20, 27);
     color: white;
 }
 
 .dark-mode .input_section,
+.dark-mode input,
 .dark-mode .search_section,
 .dark-mode .book_shelf,
 .dark-mode .book_shelf .book_item {
