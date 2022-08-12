@@ -7,14 +7,15 @@ function bookId() {
     return +new Date();
 }
 
-function generateBookObject(id, title, author, year, genre, bookCheck) {
+function generateBookObject(id, title, author, year, genre, bookCheck, bookNotCheck) {
     return {
         id,
         title,
         author,
         year,
         genre,
-        bookCheck
+        bookCheck,
+        bookNotCheck
     }
 }
 
@@ -24,13 +25,15 @@ function addBook () {
     const bookYear = document.getElementById('inputBookYear').value;
     const bookGenre = document.getElementById('inputBookGenre').value;
     const bookCheck = document.getElementById('inputBookIsComplete').checked;
+    const bookNotCheck = document.getElementById('inputBookIsNotComplete').checked;
 
     const generateBookId = bookId();
-    const bookObject = generateBookObject (generateBookId, bookTitle, bookAuthor, bookYear, bookGenre, bookCheck);
+    const bookObject = generateBookObject (generateBookId, bookTitle, bookAuthor, bookYear, bookGenre, bookCheck, bookNotCheck);
     bookList.push(bookObject);
     Toastify({
         text: 'Berhasil menambahkan buku',
         className: 'info',
+        duration: 2000,
         style: {
             background: 'linear-gradient(to right, #00b09b, #96c93d)',
         }
@@ -99,6 +102,7 @@ function bookShelf(bookObject) {
             Toastify({
                 text: 'Berhasil menghapus buku',
                 className: 'info',
+                duration: 2000,
                 style: {
                     background: 'linear-gradient(to right, #c34d32, #1c2f45)',
                 }
@@ -136,6 +140,7 @@ function bookShelf(bookObject) {
                 Toastify({
                     text: 'Berhasil mengedit buku',
                     className: 'info',
+                    duration: 2000,
                     style: {
                         background: 'linear-gradient(to right, #f07c00, #96c93d)',
                     }
@@ -168,6 +173,7 @@ function bookShelf(bookObject) {
             Toastify({
                 text: 'Berhasil menghapus buku',
                 className: 'info',
+                duration: 2000,
                 style: {
                     background: 'linear-gradient(to right, #c34d32, #1c2f45)',
                 }
@@ -205,6 +211,7 @@ function bookShelf(bookObject) {
                 Toastify({
                     text: 'Berhasil mengedit buku',
                     className: 'info',
+                    duration: 2000,
                     style: {
                         background: 'linear-gradient(to right, #f07c00, #96c93d)',
                     }
