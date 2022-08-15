@@ -46,10 +46,6 @@ main {
     margin: 8px 0;
 }
 
-.input_section > form > .input> datalist {
-    display: none;
-}
-
 .input_section > form > .input_button > button,
 #editSubmit {
     background-color: cornflowerblue;
@@ -186,6 +182,16 @@ main {
     color: black;
 }
 
+.footer {
+    background-color: cornflowerblue;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+    color: white;
+    font-size: 17px;
+}
+
 .edit_box {
     top: 0;
     left: 0;
@@ -252,6 +258,36 @@ main {
 .dark-mode .book_shelf,
 .dark-mode .book_shelf .book_item {
     border: 1px solid white;
+}
+
+.dark-mode .head_bar,
+.dark-mode #dark_mode,
+.dark-mode .input_section form .input_button button,
+.dark-mode .search_section button,
+.dark-mode #editSubmit,
+.dark-mode .footer {
+    background-color: palevioletred;
+}
+
+.dark-mode .input_section h2,
+.dark-mode .input_section form label,
+.dark-mode .search_section h2,
+.dark-mode .book_shelf h2 {
+    color: palevioletred;
+}
+
+.dark-mode .book_shelf .book_list .book_item .action .green {
+    background-color: palegreen;
+    color: black;
+}
+
+.dark-mode .book_shelf .book_list .book_item .action .red {
+    background-color: lightcoral;
+    color: black;
+}
+
+.dark-mode .book_shelf .book_list .book_item .action .orange {
+    background-color: palegoldenrod;
 }
 
 @media screen and (max-width: 600px) {
