@@ -272,8 +272,13 @@ main {
 .dark-mode .input_section h2,
 .dark-mode .input_section form label,
 .dark-mode .search_section h2,
-.dark-mode .book_shelf h2 {
+.dark-mode .book_shelf h2,
+.dark-mode #editClose {
     color: palevioletred;
+}
+
+.dark-mode #editClose:hover {
+    color: lightgreen;
 }
 
 .dark-mode .book_shelf .book_list .book_item .action .green {
